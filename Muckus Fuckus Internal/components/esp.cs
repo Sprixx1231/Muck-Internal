@@ -40,7 +40,7 @@ namespace Muckus_Fuckus_Internal
         public void DrawEsp(Vector3 footPos, Vector3 headPos, Color color,  float thiccness = 2f)
         {
             float height = headPos.y - footPos.y;
-            float widthOffset = 2f;
+            float widthOffset = 2;
             float width = height / widthOffset;
             
             //Rendering
