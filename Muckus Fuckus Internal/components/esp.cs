@@ -7,33 +7,31 @@ namespace Muckus_Fuckus_Internal
     {
         public void OnGUI()
         {
-           // GUI.Box(new Rect(0f,0f, 150f, 50f), "");
-           // GUI.Label(new Rect(0f,0f, 150f, 50f), "Some Cheat");
-           foreach (var mob in (Object.FindObjectsOfType(typeof(Mob)) as Mob[])!)
-           {
-               //player positions
-               Vector3 pivPos = mob.transform.position;
-               Vector3 playerFootPos;
-               playerFootPos.x = pivPos.x;
-               playerFootPos.y = pivPos.y - 2f;
-               playerFootPos.z = pivPos.z;
+            foreach (var mob in (Object.FindObjectsOfType(typeof(Mob)) as Mob[])!)
+            {
+                //player positions
+                Vector3 pivPos = mob.transform.position;
+                Vector3 playerFootPos;
+                playerFootPos.x = pivPos.x;
+                playerFootPos.y = pivPos.y - 2f;
+                playerFootPos.z = pivPos.z;
 
-               Vector3 playerHeadPos;
-               playerHeadPos.x = pivPos.x;
-               playerHeadPos.y = pivPos.y + 2f;
-               playerHeadPos.z = pivPos.z;
+                Vector3 playerHeadPos;
+                playerHeadPos.x = pivPos.x;
+                playerHeadPos.y = pivPos.y + 2f;
+                playerHeadPos.z = pivPos.z;
                
-               //Screen Position
-               var cam = Camera.main;
-               Vector3 wtsFoot = cam!.WorldToScreenPoint(playerFootPos);
-               Vector3 wtsHead = cam!.WorldToScreenPoint(playerHeadPos);
+                //Screen Position
+                var cam = Camera.main;
+                Vector3 wtsFoot = cam!.WorldToScreenPoint(playerFootPos);
+                Vector3 wtsHead = cam!.WorldToScreenPoint(playerHeadPos);
 
 
-               if (wtsFoot.z > 0f)
-               {
-                   DrawEsp(wtsFoot, wtsHead,Color.red, 2f );
-               }
-           }
+                if (wtsFoot.z > 0f)
+                {
+                    DrawEsp(wtsFoot, wtsHead,Color.red, 2f );
+                }
+            }
            
         }
 
